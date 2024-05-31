@@ -60,17 +60,17 @@ function getData() {
     perent.innerHTML = "";
     for (var i = 0; i < arr.length; i++) {
       perent.innerHTML += `
-            <div
-      class="container d-flex justify-content-evenly border border-1"
+    <tr
+    class="text-center"
       id="displayMain"
     >
-    <p id="displayStudentName">${arr[i].student}</p>
-            <p  id="displayFatherName">${arr[i].father}</p>
-            <p  id="displayEmail">${arr[i].email}</p>
-            <p  id="displayContact">${arr[i].contact}</p>
-            <p  id="displayAddress">${arr[i].address}</p>
+            <td class="" id="displayStudentName">${arr[i].student}</td>
+            <td class=""  id="displayFatherName">${arr[i].father}</td>
+            <td class=""  id="displayEmail">${arr[i].email}</td>
+            <td class=""  id="displayContact">${arr[i].contact}</td>
+            <td class=""  id="displayAddress">${arr[i].address}</td>
     
-    </div>`;
+    </tr>`;
     }
     // return arr;
   });
