@@ -46,8 +46,14 @@ window.addData = function () {
     address: address.value,
   };
   console.log(obj);
+
+  // var refrence = ref(db, `studentInfo/`);
+  // push(refrence, obj);
+  
+  obj.id = push(ref(db, `studentInfo`)).key;
   var refrence = ref(db, `studentInfo/`);
-  push(refrence, obj);
+  set(refrence, obj);
+
 };
 
 function getData() {
@@ -69,6 +75,7 @@ function getData() {
             <td class=""  id="displayEmail">${arr[i].email}</td>
             <td class=""  id="displayContact">${arr[i].contact}</td>
             <td class=""  id="displayAddress">${arr[i].address}</td>
+            <td class=""  id="displayAddress"><button onclick="deletList()" type="button" class="btn btn-primary">Remove</button></td>
     
     </tr>`;
     }
@@ -76,3 +83,8 @@ function getData() {
   });
 }
 getData();
+
+window.deletList = function (id) {
+  const refrence = ref(db, `studentInfo/${id}`);
+  remove(refrence);
+}
